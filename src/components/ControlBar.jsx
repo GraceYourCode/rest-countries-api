@@ -1,7 +1,8 @@
 const ControlBar = () => {
   return (
     <div className="px-20 py-8 flex justify-between">
-      <input type="search" placeholder="Search for a country" className="bg-dark-elements w-96 py-3 px-5 outline-none text-white text-home" />
+      <input type="search" placeholder="Search for a country" className="dark:bg-dark-elements bg-white w-96 
+      py-3 px-5 outline-none text-light-text dark:text-white text-home" />
       <div className="bg-dark-elements w-72 py-3 px-5 ">
         {/**The select tag is kept in this div in order to style
          * the select tag in such a way that the padding at each
