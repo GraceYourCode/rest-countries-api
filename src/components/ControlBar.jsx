@@ -1,8 +1,13 @@
+import { IoIosSearch } from "react-icons/io";
+
 const ControlBar = () => {
   return (
     <div className="px-20 py-8 flex justify-between">
-      <input type="search" placeholder="Search for a country" className="dark:bg-dark-elements bg-white w-96 
-      py-3 px-5 outline-none text-light-text dark:text-white text-home" />
+      <div className="dark:bg-dark-elements bg-white w-96 flex gap-3 items-center rounded shadow-md dark:shadow-none
+      py-3 px-6 outline-none text-light-text dark:text-white">
+        <IoIosSearch className="dark:text-white text-light-text" />
+      <input type="search" placeholder="Search for a country" className="outline-none bg-transparent" />
+      </div>
       <div className="bg-white dark:bg-dark-elements w-72 py-3 px-5 ">
         {/**The select tag is kept in this div in order to style
          * the select tag in such a way that the padding at each

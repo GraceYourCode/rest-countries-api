@@ -19,10 +19,6 @@ export default {
       "light-bg": "hsl(0, 0%, 98%)",
       "white": "hsl(0, 0%, 100%)",
       "transparent": "transparent"
-    },
-    fontSize: {
-      "home": "14px",
-      "details": "16px"
     }
   },
   plugins: [],
