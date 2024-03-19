@@ -6,7 +6,11 @@ export default {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        primary: "Nunito Sans"
+      }
+    },
     colors: {
       /**This object contains all the color themes I will be using for this project */
       "dark-elements": "hsl(209, 23%, 22%)",

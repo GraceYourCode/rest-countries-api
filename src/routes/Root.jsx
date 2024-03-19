@@ -6,7 +6,7 @@ import CountriesCollection from '../components/CountriesCollection'
 
 const Root = () => {
   return (
-    <div className='bg-dark-bg'>
+    <div className='dark:bg-dark-bg bg-light-bg font-primary'>
       <NavBar />
       <ControlBar />
       <CountriesCollection />
