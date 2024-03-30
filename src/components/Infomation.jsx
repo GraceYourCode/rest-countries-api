@@ -1,9 +1,9 @@
-const Infomation = () => {
+const Infomation = ({type, value}) => {
   return (
     <>
-      <p className="mt-2">
-        <span>Population:</span>
-        <span>10165428</span>
+      <p className="mt-2 text-sm flex gap-1 items-center">
+        <span>{`${type}:`}</span>
+        <span>{value}</span>
       </p>
     </>
   )
