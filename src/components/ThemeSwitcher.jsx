@@ -31,12 +31,12 @@ const ThemeSwitcher = () => {
   }
 
   return (
-      <button onClick={() => toggleMode()} className="outline-none bg-transparent border-0 cursor-pointer text-light-text dark:text-white">
+      <button onClick={() => toggleMode()} className="outline-none bg-transparent border-0 cursor-pointer text-xs sm:text-sm text-light-text dark:text-white">
         {darkMode ? 
         /**if darkMode is true it displays this */
-        <span className="flex gap-3 items-center"><IoMoonSharp /><>Light Mode</></span> : 
+        <span className="flex gap-1 sm:gap-3 items-center"><IoMoonSharp /><>Light Mode</></span> : 
         /**if darkMode is false it displays this */
-        <span className="flex gap-3 items-center"><IoMoonOutline /><>Dark Mode</></span>}
+        <span className="flex gap-1 sm:gap-3 items-center"><IoMoonOutline /><>Dark Mode</></span>}
       </button>
   )
 }

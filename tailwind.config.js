@@ -18,7 +18,8 @@ export default {
       "light-text": "hsl(200, 15%, 8%)",
       "light-bg": "hsl(0, 0%, 98%)",
       "white": "hsl(0, 0%, 100%)",
-      "transparent": "transparent"
+      "transparent": "transparent",
+      "dark-text": "hsl(0, 0%, 52%)"
     }
   },
   plugins: [],

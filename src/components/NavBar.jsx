@@ -5,11 +5,9 @@ import ThemeSwitcher from "./ThemeSwitcher"
  */
 const NavBar = () => {
   return (
-    <div className="bg-white dark:bg-dark-elements text-light-text dark:text-white flex justify-between px-20 py-3
-    shadow-md dark:shadow-none">
-      <p className="text-xl font-bold">Where in the world?</p>
-      {/**The button below is the  */}
-      
+    <div className="bg-white dark:bg-dark-elements text-light-text dark:text-white flex justify-between
+    px-4 sm:px-8 md:px-16 lg:px-20 py-2 sm:py-3 shadow-md dark:shadow-none">
+      <p className="text-sm sm:text-xl font-bold">Where in the world?</p>
       <ThemeSwitcher />
     </div>
   )
