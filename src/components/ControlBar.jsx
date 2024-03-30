@@ -21,7 +21,7 @@ const ControlBar = () => {
       setData(completeData);
       setSearchErr(false);
     } else {
-      const newData = completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value));
+      const newData = completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value.toLowerCase()));
       setData(newData);
       if (newData.length === 0) setSearchErr(true);//show error message if country can't be found
     }
