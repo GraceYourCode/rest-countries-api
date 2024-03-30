@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Country from "./Country"
+import { allData } from "../store/index.";
 
 const CountriesCollection = () => {
-  const [data, setData] = useState();//array that holds all the data from the api
+  const { data, setData } = useContext(allData);//array that holds all the data from the api
 
   //fetching the api
   useEffect(() => {
@@ -16,7 +17,7 @@ const CountriesCollection = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
      xl:grid-cols-4 gap-8 sm:gap-10 md:gap-16 px-8 md:px-16 lg:px-20">
       {data ?
-      //maps all the data in the array "data" and returns it
+        //maps all the data in the array "data" and returns it
         data.map(datum =>
           <Country flag={datum.flags.png} name={datum.name.official}
             alt={datum.flags.alt} key={datum.cca2} population={datum.population}
