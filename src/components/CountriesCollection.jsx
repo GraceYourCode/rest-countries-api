@@ -5,11 +5,16 @@ import { allData } from "../store/index.";
 const CountriesCollection = () => {
   const { data, setData } = useContext(allData);//array that holds all the data from the api
 
+  const { setCompleteData } = useContext(allData);
+
   //fetching the api
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
       .then(response => response.json())
-      .then(data => setData(data))
+      .then(sentData => {
+        setData(sentData);
+        setCompleteData(sentData)
+      })
       .catch(err => console.error(err));
   }, []);
 

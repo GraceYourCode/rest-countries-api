@@ -4,9 +4,17 @@ import allData from "../store/index.";
 
 const ControlBar = () => {
   const {data, setData} = useContext(allData);
+  const {completeData, setCompleteData} = useContext(allData)
   const searchBox = useRef();
 
   const search = () => {
+    if (searchBox.current.value === "") {
+      setData(completeData);
+    } else {
+      setData(completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value)));
+      console.log(completeData)
+    }
+    console.log(completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value)))
   }
 
   return (
