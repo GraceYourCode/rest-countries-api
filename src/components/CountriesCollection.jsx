@@ -31,7 +31,7 @@ const CountriesCollection = () => {
             region={datum.region} capital={datum.capital} />
         ) :
         //in case where the api call is still awaiting promise, it displays the p-tag below
-        <p className="animate-ping fixed top-1/2 left-1/2 -ml-16 text-light-text dark:text-white">Loading...</p>
+        <p className="animate-ping fixed top-1/2 left-1/2 -ml-12 text-light-text dark:text-white">Loading...</p>
       }
       {searchErr && <p className="fixed top-1/2 left-1/2 -ml-16 text-light-text dark:text-white font-bold">Country not found!!</p>}
     </div>
