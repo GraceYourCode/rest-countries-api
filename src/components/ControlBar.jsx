@@ -19,6 +19,7 @@ const ControlBar = () => {
      */
     if (searchBox.current.value === "") {
       setData(completeData);
+      setSearchErr(false);
     } else {
       const newData = completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value));
       setData(newData);
@@ -39,7 +40,7 @@ const ControlBar = () => {
         <Filter />
       </div>
       <div>
-        
+
       </div>
     </>
   )
