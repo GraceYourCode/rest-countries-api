@@ -22,7 +22,7 @@ const CountriesCollection = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-     xl:grid-cols-4 gap-8 sm:gap-10 md:gap-16 px-8 md:px-16 lg:px-20 z-10">
+     xl:grid-cols-4 gap-8 sm:gap-10 md:gap-16 px-8 md:px-16 lg:px-20">
       {data ?
         //maps all the data in the array "data" and returns it
         data.map(datum =>

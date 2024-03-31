@@ -1,7 +1,9 @@
-const Options = ({value}) => {
+const Options = ({ value, setOptions }) => {
   return (
-    <input type="text" value={value} className="text-light-text dark:text-white
-    text-sm w-full bg-transparent outline-none cursor-pointer mb-2" disabled />
+    <button className="text-light-text dark:text-white text-left
+    text-sm w-full bg-transparent outline-none cursor-pointer mb-2" onClick={(e)=>setOptions(e.target)}>
+      {value}
+    </button>
   )
 }
 

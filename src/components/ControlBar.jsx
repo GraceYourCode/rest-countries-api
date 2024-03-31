@@ -10,6 +10,8 @@ const ControlBar = () => {
 
   const { setSearchErr } = useContext(allData);
 
+  const {regionData} = useContext(allData);
+
   const searchBox = useRef();
 
   const search = () => {
@@ -18,18 +20,26 @@ const ControlBar = () => {
      * condition set in the filter() method
      */
     if (searchBox.current.value === "") {
-      setData(completeData);
+      //checks if a filter has been set
+      if (regionData.length === 0) setData(completeData); 
+      else setData(regionData);
       setSearchErr(false);
     } else {
       const newData = completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value.toLowerCase()));
-      setData(newData);
+
+      //checks if a filter has been set
+      if (regionData.length === 0) setData(newData); 
+      else setData(regionData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value.toLowerCase())));
+
       if (newData.length === 0) setSearchErr(true);//show error message if country can't be found
+      else setSearchErr(false);
     }
   }
 
   return (
     <>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-20 py-5 sm:py-7 md:py-8 flex flex-col gap-3 md:flex-row justify-between">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-20 py-5 sm:py-7 md:py-8
+      flex flex-col gap-3 md:flex-row justify-between">
         <div className="dark:bg-dark-elements bg-white w-full sm:w-96 flex gap-3 items-center rounded shadow-md dark:shadow-none
       py-2 sm:py-3 px-4 sm:px-6 outline-none text-light-text dark:text-white">
           <IoIosSearch className="dark:text-white text-light-text" />

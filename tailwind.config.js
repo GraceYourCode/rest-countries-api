@@ -19,7 +19,8 @@ export default {
       "light-bg": "hsl(0, 0%, 98%)",
       "white": "hsl(0, 0%, 100%)",
       "transparent": "transparent",
-      "dark-text": "hsl(0, 0%, 52%)"
+      "dark-text": "hsl(0, 0%, 52%)",
+      "red": "#ff0000"
     }
   },
   plugins: [],
