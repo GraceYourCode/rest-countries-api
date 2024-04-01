@@ -15,18 +15,18 @@ const CountriesCollection = () => {
       .then(response => response.json())
       .then(sentData => {
         setData(sentData);
-        setCompleteData(sentData)
+        setCompleteData(sentData);
       })
       .catch(err => console.error(err));
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-6 sm:pb-8
      xl:grid-cols-4 gap-8 sm:gap-10 md:gap-16 px-8 md:px-16 lg:px-20">
       {data ?
         //maps all the data in the array "data" and returns it
         data.map(datum =>
-          <Country flag={datum.flags.png} name={datum.name.official}
+          <Country flag={datum.flags.png} name={datum.name.common}
             alt={datum.flags.alt} key={datum.cca2} population={datum.population}
             region={datum.region} capital={datum.capital} />
         ) :

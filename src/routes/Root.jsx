@@ -21,7 +21,7 @@ const Root = () => {
       regionData,
       setRegionData
     }}>
-      <div className='dark:bg-dark-bg bg-light-bg font-primary min-h-screen'>
+      <div className='dark:bg-dark-bg bg-light-bg font-primary min-h-screen  pb-5'>
         <NavBar />
         <ControlBar />
         <CountriesCollection />

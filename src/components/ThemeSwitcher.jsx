@@ -5,12 +5,14 @@ import { IoMoonOutline } from "react-icons/io5";
 const ThemeSwitcher = () => {
   let [darkMode, setDarkMode] = useState(false);
 
+  const userTheme = window.matchMedia("(prefers-color-scheme: light)");
+
   useEffect(() => {
     /**this checks the localstorage of the user to get the preferred color theme
      * and hence inputs the return value into the variable darkMode
      */
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
+    if (userTheme.matches) setDarkMode(false);
+    else setDarkMode(true);
   }, [])
 
   useEffect(() => {
@@ -27,17 +29,17 @@ const ThemeSwitcher = () => {
      * into the localStorage of the user
      */
     setDarkMode(darkMode = !darkMode);
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    userTheme.matches = !darkMode;
   }
 
   return (
-      <button onClick={() => toggleMode()} className="outline-none bg-transparent border-0 cursor-pointer text-xs sm:text-sm text-light-text dark:text-white">
-        {darkMode ? 
+    <button onClick={() => toggleMode()} className="outline-none bg-transparent border-0 cursor-pointer text-xs sm:text-sm text-light-text dark:text-white">
+      {darkMode ?
         /**if darkMode is true it displays this */
-        <span className="flex gap-1 sm:gap-3 items-center"><IoMoonSharp /><>Light Mode</></span> : 
+        <span className="flex gap-1 sm:gap-3 items-center"><IoMoonSharp /><>Light Mode</></span> :
         /**if darkMode is false it displays this */
         <span className="flex gap-1 sm:gap-3 items-center"><IoMoonOutline /><>Dark Mode</></span>}
-      </button>
+    </button>
   )
 }
 

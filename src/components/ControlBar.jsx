@@ -20,16 +20,18 @@ const ControlBar = () => {
      * condition set in the filter() method
      */
     if (searchBox.current.value === "") {
+
       //checks if a filter has been set
       if (regionData.length === 0) setData(completeData); 
       else setData(regionData);
-      setSearchErr(false);
+
+      setSearchErr(false);//sets search error message
     } else {
-      const newData = completeData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value.toLowerCase()));
+      const newData = completeData.filter(datum => datum.name.common.toLowerCase().includes(searchBox.current.value.toLowerCase()));
 
       //checks if a filter has been set
       if (regionData.length === 0) setData(newData); 
-      else setData(regionData.filter(datum => datum.name.official.toLowerCase().includes(searchBox.current.value.toLowerCase())));
+      else setData(regionData.filter(datum => datum.name.common.toLowerCase().includes(searchBox.current.value.toLowerCase())));
 
       if (newData.length === 0) setSearchErr(true);//show error message if country can't be found
       else setSearchErr(false);
@@ -47,6 +49,8 @@ const ControlBar = () => {
             className="outline-none text-light-text dark:text-white w-full bg-transparent"
             onChange={() => search()} />
         </div>
+
+        {/* the component below holds the filter option */}
         <Filter />
       </div>
       <div>
