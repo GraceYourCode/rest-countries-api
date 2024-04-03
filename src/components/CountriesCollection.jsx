@@ -28,7 +28,7 @@ const CountriesCollection = () => {
         data.map(datum =>
           <Country flag={datum.flags.png} name={datum.name.common}
             alt={datum.flags.alt} key={datum.cca2} population={datum.population}
-            region={datum.region} capital={datum.capital} />
+            region={datum.region} capital={datum.capital} cca3={datum.cca3} />
         ) :
         //in case where the api call is still awaiting promise, it displays the p-tag below
         <p className="animate-ping fixed top-1/2 left-1/2 -ml-12 text-light-text dark:text-white">Loading...</p>

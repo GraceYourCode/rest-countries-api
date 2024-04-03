@@ -6,10 +6,17 @@ import { useState } from "react"
 
 const Details = () => {
   const [data, setData] = useState();
+  const [country, setCountry] = useState();
+  const [neededData, setNeededData] = useState();
+
   return (
     <allData.Provider value={{
       data,
-      setData
+      setData,
+      country,
+      setCountry,
+      neededData,
+      setNeededData
     }}>
       <div className='dark:bg-dark-bg bg-light-bg font-primary min-h-screen flex flex-col gap-8 sm:gap-10'>
         <NavBar />
