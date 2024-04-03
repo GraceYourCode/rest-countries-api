@@ -55,8 +55,10 @@ const Contents = () => {
               {/**destructuring native name of countries */}
               <Infomation type="Native name" font="xs"
                 value={country.nativeName.map(value => {
-                  if (country.nativeName.indexOf(value) === country.nativeName.length - 1) return value.common;
-                  else return value.common + ", "
+                  if (country.nativeName.indexOf(value) < 3 ) {
+                    if (country.nativeName.indexOf(value) === country.nativeName.length - 1) return value.common;
+                    else return value.common + ", "
+                  }
                 })} />
 
               <Infomation type="Population" value={data[0].population} font="xs" />
@@ -81,8 +83,10 @@ const Contents = () => {
               languages */}
               <Infomation type="Languages" font="xs"
                 value={country.languages.map(language => {
-                  if (country.languages.indexOf(language) === country.languages.length - 1) return language;
-                  else return language + ", ";
+                  if (country.languages.indexOf(language) < 3) {
+                    if (country.languages.indexOf(language) === country.languages.length - 1) return language;
+                    else return language + ", ";
+                  }
                 })} />
             </div>
 
