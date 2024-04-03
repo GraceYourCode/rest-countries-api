@@ -40,7 +40,7 @@ const Contents = () => {
   }, [name])
 
   return (
-    (data ?
+    (data && neededData ?
       <div className="flex flex-col landscape:lg:flex-row items-center px-8 md:px-16 lg:px-20 portrait:gap-10 gap-20 pb-5">
         <img src={data[0].flags.png} alt={data[0].flags.alt}
           className="portrait:w-full portrait:md:w-3/4 w-3/4 landscape:lg:w-2/5 landscape:xl:w-1/2" />
