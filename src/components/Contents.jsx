@@ -12,7 +12,6 @@ const Contents = () => {
   let { neededData, setNeededData } = useContext(allData);
   const location = useLocation();
   const code = location.state.code;
-  console.log(code)
 
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Contents = () => {
       .then(response => response.json())
       .then(sentData => {
         setData(data = sentData);
-        console.log(sentData)
         setCountry({
           nativeName: Object.values(sentData[0].name.nativeName),
           currencies: Object.values(sentData[0].currencies),
@@ -32,9 +30,7 @@ const Contents = () => {
     fetch('https://restcountries.com/v3.1/all')
       .then(response => response.json())
       .then(sentData => {
-        console.log(sentData)
         setNeededData(neededData = sentData);
-        console.log(neededData)
       })
       .catch(err => console.error(err));
   }, [name])
