@@ -7,7 +7,7 @@ import allData from "../store/index.";
 
 const Contents = () => {
   const { name } = useParams();//fetch the name of the country from the url
-  const { data, setData } = useContext(allData);
+  let { data, setData } = useContext(allData);
   const { country, setCountry } = useContext(allData);
   let { neededData, setNeededData } = useContext(allData);
   const location = useLocation();
@@ -19,7 +19,7 @@ const Contents = () => {
     fetch(`https://restcountries.com/v3.1/alpha/${code}`)
       .then(response => response.json())
       .then(sentData => {
-        setData(sentData);
+        setData(data = sentData);
         console.log(sentData)
         setCountry({
           nativeName: Object.values(sentData[0].name.nativeName),
@@ -40,7 +40,7 @@ const Contents = () => {
   }, [name])
 
   return (
-    (neededData ?
+    (data ?
       <div className="flex flex-col landscape:lg:flex-row items-center px-8 md:px-16 lg:px-20 portrait:gap-10 gap-20 pb-5">
         <img src={data[0].flags.png} alt={data[0].flags.alt}
           className="portrait:w-full portrait:md:w-3/4 w-3/4 landscape:lg:w-2/5 landscape:xl:w-1/2" />
@@ -87,7 +87,7 @@ const Contents = () => {
             </div>
 
           </div>
-          {data[0].border && <footer className="landscape:flex landscape:lg:block landscape:xl:flex portrait:md:flex gap-2 items-center">
+          {data[0].borders && <footer className="landscape:flex landscape:lg:block landscape:xl:flex portrait:md:flex gap-2 items-center">
             <p className="font-semibold text-xs portrait:mb-2 portrait:md:mb-0 mb-0 landscape:lg:mb-2 xl:mb-0">Border Countries:</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
               {data[0].borders.map(border => <Button cca3={border}
