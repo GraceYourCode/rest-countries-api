@@ -31,19 +31,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./src/store/Screenshot%20(1).png)
 
 ### Links
 
-- Solution URL: [https://gyc-countries-info.vercel.app](https://your-solution-url.com)
+- Solution URL: [https://github.com/GraceYourCode/rest-countries-api](https://github.com/GraceYourCode/rest-countries-api)
 - Live Site URL: [https://gyc-countries-info.vercel.app](https://gyc-countries-info.vercel.app)
 
 ## My process
@@ -105,11 +97,11 @@ I'd love to be able to make this a fullstack project and also add other function
 
 ### Useful resources
 
-- [React-icons](https://www.example.com) - This helped me for all the icons I used in this project. I really liked this pattern and will use it going forward.
-- [Tailwind CSS Docs](https://www.example.com) - This is an amazing documentation which helped me finally understand how I can implement light and dark mode and also how to use their CSS properties and styles. I'd recommend it to anyone still learning this concept.
+- [React-icons](https://react-icons.github.io/react-icons/) - This helped me for all the icons I used in this project. I really liked this pattern and will use it going forward.
+- [Tailwind CSS Docs](https://tailwindcss.com/docs/dark-mode) - This is an amazing documentation which helped me finally understand how I can implement light and dark mode and also how to use their CSS properties and styles. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@youru](https://www.twitter.com/yourusername)
+- Website - [My GitHub Profile](https://github.com/GraceYourCode)
+- Frontend Mentor - [@GraceYourCode](https://www.frontendmentor.io/profile/GraceYourCode)
+- Twitter - [@GraceYourCode](https://www.twitter.com/GraceYourCode)

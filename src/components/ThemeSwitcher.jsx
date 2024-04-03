@@ -5,14 +5,12 @@ import { IoMoonOutline } from "react-icons/io5";
 const ThemeSwitcher = () => {
   let [darkMode, setDarkMode] = useState(false);
 
-  const userTheme = window.matchMedia("(prefers-color-scheme: light)");
-
   useEffect(() => {
     /**this checks the localstorage of the user to get the preferred color theme
      * and hence inputs the return value into the variable darkMode
      */
-    if (userTheme.matches) setDarkMode(false);
-    else setDarkMode(true);
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(isDarkMode);
   }, [])
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const ThemeSwitcher = () => {
      * into the localStorage of the user
      */
     setDarkMode(darkMode = !darkMode);
-    userTheme.matches = !darkMode;
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }
 
   return (

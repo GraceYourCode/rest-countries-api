@@ -10,6 +10,28 @@ const Root = () => {
   const [searchErr, setSearchErr] = useState(false);// displays if the country searched for can be found or not
   const [regionData, setRegionData] = useState([])
 
+  const [position, setPosition] = useState("relative");
+
+  // keep track of previous scroll position
+  let prevScrollPos = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    // current scroll position
+    const currentScrollPos = window.scrollY;
+
+    if (prevScrollPos > currentScrollPos) {
+      // user has scrolled up
+      if (currentScrollPos === 0) setPosition("relative")
+      else setPosition("fixed")
+    } else {
+      // user has scrolled down
+      setPosition("relative");
+    }
+
+    // update previous scroll position
+    prevScrollPos = currentScrollPos;
+  });
+
   return (
     <allData.Provider value={{
       data,
@@ -22,8 +44,8 @@ const Root = () => {
       setRegionData
     }}>
       <div className='dark:bg-dark-bg bg-light-bg font-primary min-h-screen  pb-5'>
-        <NavBar />
-        <ControlBar />
+        <NavBar position={position} />
+        <ControlBar position={position} />
         <CountriesCollection />
       </div>
     </allData.Provider>

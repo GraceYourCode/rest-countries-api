@@ -1,9 +1,9 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import allData from "../store/index.";
 import Filter from "./Filter";
 
-const ControlBar = () => {
+const ControlBar = ({position}) => {
   const { setData } = useContext(allData);
 
   const { completeData } = useContext(allData)
@@ -13,6 +13,16 @@ const ControlBar = () => {
   const {regionData} = useContext(allData);
 
   const searchBox = useRef();
+
+  const controlBar = useRef();
+  const [top, setTop] = useState()
+
+
+  useEffect(() => {
+    if (controlBar.current) {
+      setTop(controlBar.current.getBoundingClientRect().top);
+    }
+  }, [])
 
   const search = () => {
     /**checking if the value of the search bar is empty so it can be reset 
@@ -40,8 +50,11 @@ const ControlBar = () => {
 
   return (
     <>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-20 py-5 sm:py-7 md:py-8
-      flex flex-col gap-3 md:flex-row justify-between">
+      <div className={`px-4 sm:px-8 md:px-16 lg:px-20 py-5 sm:py-7 md:py-8 ${position}
+      flex flex-col gap-3 md:flex-row justify-between w-full bg-light-bg dark:bg-dark-bg`} ref={controlBar}
+      style={{
+        top: position === "fixed" ? top + "px" : "0px"
+      }}>
         <div className="dark:bg-dark-elements bg-white w-full sm:w-96 flex gap-3 items-center rounded shadow-md dark:shadow-none
       py-2 sm:py-3 px-4 sm:px-6 outline-none text-light-text dark:text-white">
           <IoIosSearch className="dark:text-white text-light-text" />

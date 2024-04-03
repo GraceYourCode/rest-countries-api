@@ -39,9 +39,10 @@ const Contents = () => {
     (data && neededData ?
       <div className="flex flex-col landscape:lg:flex-row items-center px-8 md:px-16 lg:px-20 portrait:gap-10 gap-20 pb-5">
         <img src={data[0].flags.png} alt={data[0].flags.alt}
-          className="portrait:w-full portrait:md:w-3/4 w-3/4 landscape:lg:w-2/5 landscape:xl:w-1/2" />
+          className="portrait:w-full portrait:md:w-3/4 w-3/4 landscape:lg:w-2/5 landscape:xl:w-1/2
+          shadow-md dark:shadow-none" />
 
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 text-light-text dark:text-white">
           <h5 className="text-lg font-bold">{name.slice(1)}</h5>
           <div className="flex portrait:flex-col portrait:md:flex-row landscape:items-center
           portrait:gap-y-6 gap-x-20 landscape:gap-x-10 xl:gap-x-20
@@ -90,7 +91,7 @@ const Contents = () => {
           {data[0].borders && <footer className="landscape:flex landscape:lg:block landscape:xl:flex portrait:md:flex gap-2 items-center">
             <p className="font-semibold text-xs portrait:mb-2 portrait:md:mb-0 mb-0 landscape:lg:mb-2 xl:mb-0">Border Countries:</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-              {data[0].borders.map(border => <Button cca3={border}
+              {data[0].borders.map(border => <Button cca3={border} key={border}
               value={neededData.find(data => data.cca3 === border).name.common} />)}
             </div>
           </footer>}
