@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import img from "../store/GLORIOUS EXIT.png"
 import Infomation from "./Infomation";
 import Button from "./Button";
 import allData from "../store/index.";
@@ -15,6 +14,8 @@ const Contents = () => {
 
 
   useEffect(() => {
+    setData(undefined);//this is make sure that datadoes not hold any value before the page loads
+    
     fetch(`https://restcountries.com/v3.1/alpha/${code}`)
       .then(response => response.json())
       .then(sentData => {
