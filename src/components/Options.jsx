@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const Options = ({ value, setOptions }) => {
   return (
     <button className="text-light-text dark:text-white text-left
